@@ -8,20 +8,32 @@ import java.util.Objects;
 @XmlRootElement
 public class SubObjectDTO {
 
+    private Long id;
     private String name;
     private Double sumInsured;
     private String riskType;
 
     public SubObjectDTO() {
+        this.id = null;
         this.name = null;
         this.sumInsured = null;
         this.riskType = null;
     }
 
-    public SubObjectDTO(String name, Double sumInsured, String riskType) {
+    public SubObjectDTO(Long id, String name, Double sumInsured, String riskType) {
+        this.id = id;
         this.name = name;
         this.sumInsured = sumInsured;
         this.riskType = riskType;
+    }
+
+    @JsonProperty(required = true)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @JsonProperty(required = true)
@@ -56,20 +68,22 @@ public class SubObjectDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SubObjectDTO that = (SubObjectDTO) o;
-        return Objects.equals(name, that.name) &&
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(sumInsured, that.sumInsured) &&
                 Objects.equals(riskType, that.riskType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, sumInsured, riskType);
+        return Objects.hash(id, name, sumInsured, riskType);
     }
 
     @Override
     public String toString() {
         return "SubObjectDTO{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", sumInsured=" + sumInsured +
                 ", riskType='" + riskType + '\'' +
                 '}';

@@ -9,20 +9,32 @@ import java.util.Objects;
 @XmlRootElement
 public class PolicyDTO {
 
+    private Long id;
     private String number;
     private String status;
-    private List<PolictyObjectDTO> policyObjects;
+    private List<PolicyObjectDTO> policyObjects;
 
     public PolicyDTO() {
+        this.id = null;
         this.number = null;
         this.status = null;
         this.policyObjects = null;
     }
 
-    public PolicyDTO(String number, String status, List<PolictyObjectDTO> policyObjects) {
+    public PolicyDTO(Long id, String number, String status, List<PolicyObjectDTO> policyObjects) {
+        this.id = id;
         this.number = number;
         this.status = status;
         this.policyObjects = policyObjects;
+    }
+
+    @JsonProperty(required = true)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @JsonProperty(required = true)
@@ -44,11 +56,11 @@ public class PolicyDTO {
     }
 
     @JsonProperty(required = true)
-    public List<PolictyObjectDTO> getPolicyObjects() {
+    public List<PolicyObjectDTO> getPolicyObjects() {
         return policyObjects;
     }
 
-    public void setPolicyObjects(List<PolictyObjectDTO> policyObjects) {
+    public void setPolicyObjects(List<PolicyObjectDTO> policyObjects) {
         this.policyObjects = policyObjects;
     }
 
@@ -56,21 +68,23 @@ public class PolicyDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PolicyDTO that = (PolicyDTO) o;
-        return Objects.equals(number, that.number) &&
-                Objects.equals(status, that.status) &&
-                Objects.equals(policyObjects, that.policyObjects);
+        PolicyDTO policyDTO = (PolicyDTO) o;
+        return Objects.equals(id, policyDTO.id) &&
+                Objects.equals(number, policyDTO.number) &&
+                Objects.equals(status, policyDTO.status) &&
+                Objects.equals(policyObjects, policyDTO.policyObjects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, status, policyObjects);
+        return Objects.hash(id, number, status, policyObjects);
     }
 
     @Override
     public String toString() {
         return "PolicyDTO{" +
-                "number='" + number + '\'' +
+                "id=" + id +
+                ", number='" + number + '\'' +
                 ", status='" + status + '\'' +
                 ", policyObjects=" + policyObjects +
                 '}';
