@@ -24,7 +24,7 @@ class PolicyObjectDTOJSONTest {
 
     @Test
     public void serializePolicy() throws IOException {
-        PolicyObjectDTO testPolicyObject = createTestPolicyObject(1, Constants.riskType.FIRE);
+        PolicyObjectDTO testPolicyObject = createTestPolicyObject(1, Constants.RiskType.FIRE);
         JsonContent<PolicyObjectDTO> value = this.json.write(testPolicyObject);
         assertThat(this.json.parseObject(value.getJson())).isEqualTo(testPolicyObject);
     }

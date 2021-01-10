@@ -7,17 +7,23 @@ localhost:8080/api/v1.0/premium/calculate
 
 **TEST JSON data for API testing:**
 _{
-    "id":10,
-    "number":"INSURANCE-330000-BALTICS-2021",
-    "status":"REGISTERED",
-    "policyObjects":[{
-            "id":1,
-            "name":"NEW NAME",
-            "subObjects":[{
-                "id":1,
-                "name":"NEW NAME",
-                "sumInsured":200,
-                "riskType":"FIRE"
-            }]
-        }]
-}_
+     "id":10,
+     "number":"INSURANCE-330000-BALTICS-2021",
+     "status":"REGISTERED",
+     "policyObjects":[{
+             "id":1,
+             "name":"NEW NAME",
+             "subObjects":[{
+                 "id":1,
+                 "name":"NEW NAME",
+                 "sumInsured":500,
+                 "riskType":"FIRE"
+             },
+             {
+                 "id":2,
+                 "name":"NEW NAME",
+                 "sumInsured":102.51,
+                 "riskType":"THEFT"
+             }]
+         }]
+ }_

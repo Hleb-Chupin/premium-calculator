@@ -85,7 +85,7 @@ public class SubObjectDTO {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sumInsured=" + sumInsured +
-                ", riskType='" + riskType + '\'' +
+                ", RiskType='" + riskType + '\'' +
                 '}';
     }
 }

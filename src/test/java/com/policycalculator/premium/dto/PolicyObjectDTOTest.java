@@ -11,37 +11,37 @@ class PolicyObjectDTOTest {
 
     @Test
     void equalsReturnsTrueSymmetricallyOnSameObjects() {
-        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.riskType.FIRE);
-        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(1, Constants.riskType.FIRE);
+        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.RiskType.FIRE);
+        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(1, Constants.RiskType.FIRE);
         Assertions.assertTrue(testPolicyObject1.equals(testPolicyObject2) && testPolicyObject2.equals(testPolicyObject1));
     }
 
     @Test
     void equalsReturnsFalseSymmetricallyOnDifferentObjects() {
-        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.riskType.FIRE);
-        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(2, Constants.riskType.FIRE);
+        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.RiskType.FIRE);
+        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(2, Constants.RiskType.FIRE);
         Assertions.assertTrue(!testPolicyObject1.equals(testPolicyObject2) && !testPolicyObject2.equals(testPolicyObject1));
 
-        PolicyObjectDTO testPolicyObject3 = createTestPolicyObject(1, Constants.riskType.FIRE);
-        PolicyObjectDTO testPolicyObject4 = createTestPolicyObject(2, Constants.riskType.THEFT);
+        PolicyObjectDTO testPolicyObject3 = createTestPolicyObject(1, Constants.RiskType.FIRE);
+        PolicyObjectDTO testPolicyObject4 = createTestPolicyObject(2, Constants.RiskType.THEFT);
         Assertions.assertTrue(!testPolicyObject3.equals(testPolicyObject4) && !testPolicyObject4.equals(testPolicyObject3));
     }
 
     @Test
     void hashCodesAreSameOnSameObjects() {
-        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.riskType.THEFT);
-        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(1, Constants.riskType.THEFT);
+        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.RiskType.THEFT);
+        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(1, Constants.RiskType.THEFT);
         Assertions.assertTrue(testPolicyObject1.hashCode() == testPolicyObject2.hashCode());
     }
 
     @Test
     void hashCodesDifferOnDiffentObjects() {
-        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.riskType.THEFT);
-        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(2, Constants.riskType.THEFT);
+        PolicyObjectDTO testPolicyObject1 = createTestPolicyObject(1, Constants.RiskType.THEFT);
+        PolicyObjectDTO testPolicyObject2 = createTestPolicyObject(2, Constants.RiskType.THEFT);
         Assertions.assertTrue(testPolicyObject1.hashCode() != testPolicyObject2.hashCode());
 
-        PolicyObjectDTO testPolicyObject3 = createTestPolicyObject(1, Constants.riskType.FIRE);
-        PolicyObjectDTO testPolicyObject4 = createTestPolicyObject(2, Constants.riskType.THEFT);
+        PolicyObjectDTO testPolicyObject3 = createTestPolicyObject(1, Constants.RiskType.FIRE);
+        PolicyObjectDTO testPolicyObject4 = createTestPolicyObject(2, Constants.RiskType.THEFT);
         Assertions.assertTrue(testPolicyObject3.hashCode() != testPolicyObject4.hashCode());
     }
 

@@ -61,7 +61,7 @@ public class SubObject extends Entity {
         return "SubObject{" +
                 "name='" + name + '\'' +
                 ", sumInsured=" + sumInsured +
-                ", riskType='" + riskType + '\'' +
+                ", RiskType='" + riskType + '\'' +
                 '}';
     }
 }

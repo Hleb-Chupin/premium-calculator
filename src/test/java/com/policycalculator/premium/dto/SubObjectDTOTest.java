@@ -38,7 +38,7 @@ class SubObjectDTOTest {
         SubObjectDTO subObjectDTO = new SubObjectDTO();
         subObjectDTO.setId(new Long(id));
         subObjectDTO.setName("NEW NAME");
-        subObjectDTO.setRiskType(Constants.riskType.FIRE.toString());
+        subObjectDTO.setRiskType(Constants.RiskType.FIRE.toString());
         subObjectDTO.setSumInsured(200.00);
         return subObjectDTO;
     }
