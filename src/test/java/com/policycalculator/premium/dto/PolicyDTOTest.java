@@ -49,12 +49,12 @@ class PolicyDTOTest {
         PolicyDTO policyDTO = new PolicyDTO();
         policyDTO.setId(new Long(id));
         policyDTO.setNumber("INSURANCE-330000-BALTICS-2021");
-        policyDTO.setPolicyObjects(createtestPolicys(riskType));
+        policyDTO.setPolicyObjects(createTestPolicys(riskType));
         policyDTO.setStatus(Constants.REGISTERED);
         return policyDTO;
     }
 
-    private List<PolicyObjectDTO> createtestPolicys(Enum riskType) {
+    private List<PolicyObjectDTO> createTestPolicys(Enum riskType) {
         List<PolicyObjectDTO> policyObjectDTOS = new ArrayList<>();
 
         PolicyObjectDTO policyObjectDTO1 = new PolicyObjectDTO();
